@@ -14,8 +14,8 @@ shift + alt - w : yabai -m window --warp north
 shift + alt - d : yabai -m window --warp east
 
 # Move focus container to workspace
-shift + alt - q : yabai -m window --space prev; yabai -m space --focus prev
-shift + alt - e : yabai -m window --space next; yabai -m space --focus next
+shift + alt - q : yabai -m window --space prev && skhd --key 'ctrl - left'
+shift + alt - e : yabai -m window --space next && skhd --key 'ctrl - right'
 
 # Equalize size of windows
 shift + alt - b : yabai -m space --balance
