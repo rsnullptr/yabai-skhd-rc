@@ -2,20 +2,20 @@
 alt - return : open -a Hyper
 
 # Navigation
-alt - left : yabai -m window --focus west
-alt - down : yabai -m window --focus south
-alt - up : yabai -m window --focus north
-alt - right : yabai -m window --focus east
+alt - a : yabai -m window --focus west
+alt - s : yabai -m window --focus south
+alt - w : yabai -m window --focus north
+alt - d : yabai -m window --focus east
 
 # Moving windows
-shift + alt - left : yabai -m window --warp west
-shift + alt - down : yabai -m window --warp south
-shift + alt - up : yabai -m window --warp north
-shift + alt - right : yabai -m window --warp east
+shift + alt - a : yabai -m window --warp west
+shift + alt - s : yabai -m window --warp south
+shift + alt - w : yabai -m window --warp north
+shift + alt - d : yabai -m window --warp east
 
 # Move focus container to workspace
-shift + alt - u : yabai -m window --space prev; yabai -m space --focus prev
-shift + alt - o : yabai -m window --space next; yabai -m space --focus next
+shift + alt - q : yabai -m window --space prev; yabai -m space --focus prev
+shift + alt - e : yabai -m window --space next; yabai -m space --focus next
 
 # Equalize size of windows
 shift + alt - b : yabai -m space --balance
@@ -32,10 +32,10 @@ shift + alt - r : yabai -m space --rotate 90
 #shift + alt - y : yabai -m space --mirror y-axis
 
 # Set insertion point for focused container
-shift + lctrl + alt - left : yabai -m window --insert west
-shift + lctrl + alt - down : yabai -m window --insert south
-shift + lctrl + alt - up : yabai -m window --insert north
-shift + lctrl + alt - right : yabai -m window --insert east
+shift + lctrl + alt - a : yabai -m window --insert west
+shift + lctrl + alt - s : yabai -m window --insert south
+shift + lctrl + alt - w : yabai -m window --insert north
+shift + lctrl + alt - d : yabai -m window --insert east
 
 # Float / Unfloat window
 shift + alt - space : \
