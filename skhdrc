@@ -19,9 +19,7 @@ shift + alt - e : yabai -m window --space next && skhd --key 'ctrl - right'
 
 # Equalize size of windows
 shift + alt - b : yabai -m space --balance
-
-# Enable / Disable gaps in current workspace
-#lctrl + alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+shift + alt - t : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
 
 # Rotate windows clockwise and anticlockwise
 alt - r         : yabai -m space --rotate 270
@@ -45,3 +43,4 @@ shift + alt - space : \
 # Make window native fullscreen
 alt - f         : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
+
