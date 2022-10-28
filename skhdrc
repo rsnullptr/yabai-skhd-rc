@@ -1,5 +1,11 @@
 # opens iTerm2
-alt - 1 : open -a Hyper
+ctrl - 1 : open -a Hyper
+ctrl - 2 : open -a Webstorm
+ctrl - 3 : open -a Vivaldi
+
+# focus on display
+shift + alt - a : yabai -m display --focus 1
+shift + alt - d : yabai -m display --focus 2
 
 # Navigation
 alt - a : yabai -m window --focus west
