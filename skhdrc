@@ -18,8 +18,9 @@ shift + alt - d : yabai -m window --warp east
 
 # Equalize size of windows
 shift + alt - b : yabai -m space --balance
-shift + alt - r : yabai --restart-service
-shift + alt - t : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
+shift + alt - r : yabai -m space --rotate 90 && yabai -m space --balance
+shift + alt - l : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
+shift + alt - x : yabai -m query --windows --space | jq -r '.[] | select(.float == 1) | .id' | xargs -I {} yabai -m window {} --toggle border
 
 # Float / Unfloat window
 lalt - f: \
@@ -29,4 +30,3 @@ lalt - f: \
 # Make window native fullscreen
 lshift + lalt - f  : yabai -m window --toggle zoom-fullscreen
 lctrl + lalt - f   : yabai -m window --toggle native-fullscreen
-
