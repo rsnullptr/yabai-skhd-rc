@@ -1,11 +1,8 @@
-# opens iTerm2
-ctrl - 1 : open -a Hyper
-ctrl - 2 : open -a Webstorm
-ctrl - 3 : open -a Vivaldi
-
 # focus on display
-shift + alt - a : yabai -m display --focus 1
-shift + alt - d : yabai -m display --focus 2
+lctrl + lalt - a : yabai -m display --focus west
+lctrl + lalt - s : yabai -m display --focus south
+lctrl + lalt - s : yabai -m display --focus east
+lctrl + lalt - w : yabai -m display --focus north
 
 # Navigation
 alt - a : yabai -m window --focus west
@@ -19,34 +16,17 @@ shift + alt - s : yabai -m window --warp south
 shift + alt - w : yabai -m window --warp north
 shift + alt - d : yabai -m window --warp east
 
-# Move focus container to workspace
-shift + alt - q : yabai -m window --space prev && skhd --key 'ctrl - left'
-shift + alt - e : yabai -m window --space next && skhd --key 'ctrl - right'
-
 # Equalize size of windows
 shift + alt - b : yabai -m space --balance
+shift + alt - r : yabai --restart-service
 shift + alt - t : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
 
-# Rotate windows clockwise and anticlockwise
-alt - r         : yabai -m space --rotate 270
-shift + alt - r : yabai -m space --rotate 90
-
-# Rotate on X and Y Axis
-#shift + alt - x : yabai -m space --mirror x-axis
-#shift + alt - y : yabai -m space --mirror y-axis
-
-# Set insertion point for focused container
-shift + lctrl + alt - a : yabai -m window --insert west
-shift + lctrl + alt - s : yabai -m window --insert south
-shift + lctrl + alt - w : yabai -m window --insert north
-shift + lctrl + alt - d : yabai -m window --insert east
-
 # Float / Unfloat window
-shift + alt - space : \
+lalt - f: \
     yabai -m window --toggle float; \
     yabai -m window --toggle border
 
 # Make window native fullscreen
-alt - f         : yabai -m window --toggle zoom-fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
+lshift + lalt - f  : yabai -m window --toggle zoom-fullscreen
+lctrl + lalt - f   : yabai -m window --toggle native-fullscreen
 
