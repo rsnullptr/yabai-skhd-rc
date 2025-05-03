@@ -5,22 +5,27 @@ lctrl + lalt - d : yabai -m display --focus east
 lctrl + lalt - w : yabai -m display --focus north
 
 # Navigation
-alt - a : yabai -m window --focus west
-alt - s : yabai -m window --focus south
-alt - w : yabai -m window --focus north
-alt - d : yabai -m window --focus east
+lalt - a : yabai -m window --focus west
+lalt - s : yabai -m window --focus south
+lalt - w : yabai -m window --focus north
+lalt - d : yabai -m window --focus east
 
 # Moving windows
-shift + alt - a : yabai -m window --warp west
-shift + alt - s : yabai -m window --warp south
-shift + alt - w : yabai -m window --warp north
-shift + alt - d : yabai -m window --warp east
+lctrl + lalt - a : yabai -m window --warp west
+lctrl + lalt - s : yabai -m window --warp south
+lctrl + lalt - w : yabai -m window --warp north
+lctrl + lalt - d : yabai -m window --warp east
+
+# Moving windows between spaces
+lshift + lalt - d : yabai -m space --create && yabai -m window --space next && yabai -m space --focus next
+lshift + lalt - a : yabai -m window --space prev && yabai -m space --destroy && yabai -m space --focus prev
+lshift + lalt - x : yabai -m space --destroy
 
 # Equalize size of windows
-shift + alt - b : yabai -m space --balance
-shift + alt - r : yabai -m space --rotate 90 && yabai -m space --balance
-shift + alt - l : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
-shift + alt - x : yabai -m query --windows --space | jq -r '.[] | select(.float == 1) | .id' | xargs -I {} yabai -m window {} --toggle border
+lshift + lalt - b : yabai -m space --balance
+lshift + lalt - r : yabai -m space --rotate 90 && yabai -m space --balance
+lshift + lalt - l : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
+lshift + lalt - x : yabai -m query --windows --space | jq -r '.[] | select(.float == 1) | .id' | xargs -I {} yabai -m window {} --toggle border
 
 # Float / Unfloat window
 lalt - f: \
@@ -30,3 +35,4 @@ lalt - f: \
 # Make window native fullscreen
 lshift + lalt - f  : yabai -m window --toggle zoom-fullscreen
 lctrl + lalt - f   : yabai -m window --toggle native-fullscreen
+
