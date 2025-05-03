@@ -1,40 +1,34 @@
-# focus on display
-lctrl + lalt - a : yabai -m display --focus west
-lctrl + lalt - s : yabai -m display --focus south
-lctrl + lalt - d : yabai -m display --focus east
-lctrl + lalt - w : yabai -m display --focus north
-
 # Navigation
-lalt - a : yabai -m window --focus west
-lalt - s : yabai -m window --focus south
-lalt - w : yabai -m window --focus north
-lalt - d : yabai -m window --focus east
+lalt + lcmd - a : yabai -m window --focus west  || yabai -m display --focus west
+lalt + lcmd - s : yabai -m window --focus south || yabai -m display --focus south
+lalt + lcmd - w : yabai -m window --focus north || yabai -m display --focus north
+lalt + lcmd - d : yabai -m window --focus east  || yabai -m display --focus east
 
-# Moving windows
-lctrl + lalt - a : yabai -m window --warp west
-lctrl + lalt - s : yabai -m window --warp south
-lctrl + lalt - w : yabai -m window --warp north
-lctrl + lalt - d : yabai -m window --warp east
+lalt + lcmd - left: yabai -m window --focus west || yabai -m display --focus west
+lalt + lcmd - down: yabai -m window --focus south || yabai -m display --focus south
+lalt + lcmd - up: yabai -m window --focus north || yabai -m display --focus north
+lalt + lcmd - right: yabai -m window --focus east || yabai -m display --focus east
 
 # Moving windows between spaces
-lshift + lalt - d : yabai -m window --space next && yabai -m space --focus next && yabai -m window --focus first
-lshift + lalt - a : yabai -m window --space prev && yabai -m space --focus prev && yabai -m window --focus first
-lshift + lalt - x : yabai -m space --destroy
-lshift + lalt - n : yabai -m space --create && yabai -m window --focus first
-lshift + lalt - m : yabai -m space --create && yabai -m space --focus next && yabai -m window --focus first
+lcmd + lalt - d : yabai -m window --space next && yabai -m space --focus next && yabai -m window --focus first
+lcmd + lalt - a : yabai -m window --space prev && yabai -m space --focus prev && yabai -m window --focus first
 
 # Equalize size of windows
-lshift + lalt - b : yabai -m space --balance
-lshift + lalt - r : yabai -m space --rotate 90 && yabai -m space --balance
-lshift + lalt - l : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
-lshift + lalt - x : yabai -m query --windows --space | jq -r '.[] | select(.float == 1) | .id' | xargs -I {} yabai -m window {} --toggle border
+lcmd + lalt - b : yabai -m space --balance
+lcmd + lalt - r : yabai -m space --rotate 90 && yabai -m space --balance
+
+lcmd + lalt - n : yabai -m space --create && yabai -m window --focus first
+lcmd + lalt - m : yabai -m space --create && yabai -m space --focus next && yabai -m window --focus first
+lcmd + lalt - x : yabai -m space --destroy
+
 
 # Float / Unfloat window
-lalt - f: \
+lcmd + lalt - f: \
     yabai -m window --toggle float; \
     yabai -m window --toggle border
 
 # Make window native fullscreen
 lshift + lalt - f  : yabai -m window --toggle zoom-fullscreen
+lshift + lalt - l : yabai -m config layout | grep 'bsp' && yabai -m config layout float || yabai -m config layout bsp
 lctrl + lalt - f   : yabai -m window --toggle native-fullscreen
 
