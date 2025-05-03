@@ -17,9 +17,11 @@ lctrl + lalt - w : yabai -m window --warp north
 lctrl + lalt - d : yabai -m window --warp east
 
 # Moving windows between spaces
-lshift + lalt - d : yabai -m space --create && yabai -m window --space next && yabai -m space --focus next
-lshift + lalt - a : yabai -m window --space prev && yabai -m space --destroy && yabai -m space --focus prev
+lshift + lalt - d : yabai -m window --space next && yabai -m space --focus next && yabai -m window --focus first
+lshift + lalt - a : yabai -m window --space prev && yabai -m space --focus prev && yabai -m window --focus first
 lshift + lalt - x : yabai -m space --destroy
+lshift + lalt - n : yabai -m space --create && yabai -m window --focus first
+lshift + lalt - m : yabai -m space --create && yabai -m space --focus next && yabai -m window --focus first
 
 # Equalize size of windows
 lshift + lalt - b : yabai -m space --balance
