@@ -1,7 +1,7 @@
 # focus on display
 lctrl + lalt - a : yabai -m display --focus west
 lctrl + lalt - s : yabai -m display --focus south
-lctrl + lalt - s : yabai -m display --focus east
+lctrl + lalt - d : yabai -m display --focus east
 lctrl + lalt - w : yabai -m display --focus north
 
 # Navigation
