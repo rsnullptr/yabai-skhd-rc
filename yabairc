@@ -7,7 +7,12 @@
 set -x
 launchctl unload -F /System/Library/LaunchAgents/com.apple.WindowManager.plist
 sudo yabai --load-sa
+
+#load sa on dock restart
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+#close space if window closed and empty
+yabai -m signal --add event=window_destroyed action='sh -c "yabai -m query --spaces | jq -r \".[] | select(.windows | length == 0) | .index\" | xargs -I {} yabai -m space {} --destroy"'
 
 yabai -m config external_bar all:0:0 \
     mouse_follows_focus on \
