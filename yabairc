@@ -23,9 +23,9 @@ yabai -m config external_bar all:0:0 \
     window_opacity on \
     window_opacity_duration 0.1 \
     active_window_opacity 1.0 \
-    normal_window_opacity 0.9 \
-    window_animation_duration 0.3 \
-    window_animation_easing ease_out_expo \
+    normal_window_opacity 1.0 \
+    window_animation_duration 0.1 \
+    window_animation_easing linear \
     insert_feedback_color 0xFFFFD699 \
     active_window_border_color 0xFFFFD699 \
     normal_window_border_color 0xFFFFD699 \
@@ -35,11 +35,11 @@ yabai -m config external_bar all:0:0 \
     mouse_action1 move \
     mouse_action2 resize \
     mouse_drop_action swap \
-    top_padding 2 \
-    bottom_padding 2 \
-    left_padding 2 \
-    right_padding 2 \
-    window_gap 3
+    top_padding 1 \
+    bottom_padding 1 \
+    left_padding 1 \
+    right_padding 1 \
+    window_gap 1
 
 # Exclude problematic apps from being managed:
 yabai -m rule --add app="^(Pritunl|LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor)$" manage=off
