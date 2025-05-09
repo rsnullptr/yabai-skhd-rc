@@ -1,7 +1,7 @@
 # Navigation
 
 # Focus West: Focus window to the west or next space or west display
-lalt - j: yabai -m window --focus west || yabai -m space --focus next || yabai -m display --focus west
+lalt - j: yabai -m window --focus west || yabai -m display --focus west || yabai -m space --focus next
 
 # Focus South: Focus window to the south or south display
 lalt - k: yabai -m window --focus south || yabai -m display --focus south
@@ -10,21 +10,21 @@ lalt - k: yabai -m window --focus south || yabai -m display --focus south
 lalt - i: yabai -m window --focus north || yabai -m display --focus north
 
 # Focus East: Focus window to the east or previous space or east display
-lalt - l: yabai -m window --focus east || yabai -m space --focus prev || yabai -m display --focus east 
+lalt - l: yabai -m window --focus east || yabai -m display --focus east || yabai -m space --focus prev 
 
 # Switch to next/previous space
 
 # Next Space: Focus on the next space
-lalt - p : yabai -m space --focus next
+lalt - u : yabai -m space --focus next
 
 # Move to Next & Focus: Move window to next space and keep focus on it
-lalt - o : window_id=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window --space next && yabai -m space --focus next && yabai -m window --focus ${window_id}
+lalt - p : window_id=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window --space next && yabai -m space --focus next && yabai -m window --focus ${window_id}
 
 # Previous Space: Focus on the previous space
-lalt - y : yabai -m space --focus prev
+lalt - o : yabai -m space --focus prev
 
 # Move to Previous & Focus: Move window to previous space and keep focus on it
-lalt - u : window_id=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window --space prev && yabai -m space --focus prev && yabai -m window --focus ${window_id}
+lalt - y : window_id=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window --space prev && yabai -m space --focus prev && yabai -m window --focus ${window_id}
 
 # Smart Move: Move window to empty space or create new space when needed
 lalt - m: sh -c 'current_space=$(yabai -m query --windows --window | jq -r ".space") && windows_in_space=$(yabai -m query --windows | jq -r ".[] | select(.space == $current_space) | .id" | wc -l); if [ $windows_in_space -gt 1 ]; then empty_space=$(yabai -m query --spaces | jq -r ".[] | select(.windows | length == 0) | .index" | head -n 1); if [ ! -z "$empty_space" ]; then yabai -m window --space $empty_space && yabai -m space --focus $empty_space && yabai -m window --focus first; else yabai -m space --create && new_space=$(yabai -m query --spaces | jq -r ".[] | select(.windows | length == 0) | .index" | head -n 1) && yabai -m window --space $new_space && yabai -m space --focus $new_space && yabai -m window --focus first; fi; fi'
