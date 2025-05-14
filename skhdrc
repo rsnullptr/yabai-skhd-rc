@@ -1,7 +1,7 @@
 # Navigation
 
 # Focus West: Focus window to the west or next space or west display
-lalt - j: yabai -m window --focus west || yabai -m display --focus west || yabai -m space --focus next
+lalt - j: yabai -m window --focus west || yabai -m window --focus last
 
 # Focus South: Focus window to the south or south display
 lalt - k: yabai -m window --focus south || yabai -m display --focus south
@@ -10,18 +10,18 @@ lalt - k: yabai -m window --focus south || yabai -m display --focus south
 lalt - i: yabai -m window --focus north || yabai -m display --focus north
 
 # Focus East: Focus window to the east or previous space or east display
-lalt - l: yabai -m window --focus east || yabai -m display --focus east || yabai -m space --focus prev 
+lalt - l: yabai -m window --focus east || yabai -m window --focus first
 
 # Switch to next/previous space
 
 # Next Space: Focus on the next space
-lalt - u : yabai -m space --focus next
+lalt - o : yabai -m space --focus next
 
 # Move to Next & Focus: Move window to next space and keep focus on it
 lalt - p : window_id=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window --space next && yabai -m space --focus next && yabai -m window --focus ${window_id}
 
 # Previous Space: Focus on the previous space
-lalt - o : yabai -m space --focus prev
+lalt - u : yabai -m space --focus prev
 
 # Move to Previous & Focus: Move window to previous space and keep focus on it
 lalt - y : window_id=$(yabai -m query --windows --window | jq -r '.id') && yabai -m window --space prev && yabai -m space --focus prev && yabai -m window --focus ${window_id}
