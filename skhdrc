@@ -14,6 +14,9 @@ lalt - l: yabai -m window --focus east || yabai -m window --focus first
 
 # Switch to next/previous space
 
+# Switch between Displays 1-2: Focus on display 1-2
+lalt - 1 : yabai -m display --focus 1 || yabai -m display --focus 2
+
 # Next Space: Focus on the next space
 lalt - o : yabai -m space --focus next
 
