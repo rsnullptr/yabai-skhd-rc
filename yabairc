@@ -17,7 +17,7 @@ yabai -m signal --add event=window_created action="./check_windows.sh"
 yabai -m signal --add event=application_launched action="./check_windows.sh"
 
 yabai -m config external_bar all:0:0 \
-    mouse_follows_focus on \
+    mouse_follows_focus off \
     focus_follows_mouse off \
     window_zoom_persist off \
     window_placement first_child \
@@ -28,8 +28,8 @@ yabai -m config external_bar all:0:0 \
     normal_window_opacity 1.0 \
     window_animation_duration 0 \
     window_animation_easing linear \
-    insert_feedback_color 0xFFFFD699 \
-    active_window_border_color 0xFFFFD699 \
+    insert_feedback_color 0xFF87CEFA \
+    active_window_border_color 0xFF87CEFA \
     normal_window_border_color 0xFFFFD699 \
     split_ratio 0.50 \
     auto_balance on \
@@ -37,11 +37,11 @@ yabai -m config external_bar all:0:0 \
     mouse_action1 move \
     mouse_action2 resize \
     mouse_drop_action swap \
-    top_padding 3 \
-    bottom_padding 3 \
-    left_padding 3 \
-    right_padding 3 \
-    window_gap 3 \
+    top_padding 6 \
+    bottom_padding 6 \
+    left_padding 6 \
+    right_padding 6 \
+    window_gap 6 \
     layout bsp
 
 # Exclude problematic apps from being managed:
